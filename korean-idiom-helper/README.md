@@ -105,13 +105,26 @@ OpenAI GPT-3.5-turbo API를 사용하여 상황에 맞는 사자성어를 추천
 ## 배포
 
 ### Netlify 배포
+
+1. 프로젝트 빌드
 ```bash
 npm run build
 ```
-빌드된 `build` 폴더를 Netlify에 업로드하거나 GitHub 연동을 통해 자동 배포할 수 있습니다.
+
+2. Netlify에 배포
+   - Netlify 대시보드에서 새 사이트 생성
+   - GitHub 저장소 연결 또는 `build` 폴더 업로드
+
+3. **환경변수 설정** (중요!)
+   - Netlify 대시보드 → Site settings → Environment variables
+   - 다음 환경변수 추가:
+     - **Key**: `REACT_APP_OPENAI_API_KEY`
+     - **Value**: `your_openai_api_key_here`
+   - 변경사항 저장 후 재배포
 
 ### Vercel 배포
 Vercel CLI를 사용하거나 GitHub 연동을 통해 자동 배포할 수 있습니다.
+- Vercel 대시보드에서도 동일하게 환경변수 설정 필요
 
 ## 라이선스
 
